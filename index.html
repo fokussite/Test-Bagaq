@@ -1,189 +1,168 @@
 <!DOCTYPE html>
 <html lang="kk"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Тойға Ерекше Шақырту — Қуанышыңызды ерекше бөлісіңіз!</title>
+<title>Тойға Ерекше Шақырту 2.0 — Қуанышыңызды ерекше бөлісіңіз!</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,sans-serif}
-body{background:#0f0a00;color:#222;overflow-x:hidden}
-a{color:inherit}
-.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.95);display:flex;justify-content:space-between;align-items:center;padding:12px 16px}
-.logo{font-weight:900;font-size:19px}.logo span{color:#d4a017}
-.hero{position:relative;min-height:520px;background:radial-gradient(circle at 50% 20%,#ffd70055,transparent),linear-gradient(180deg,#1a1200,#3a2800);color:#fff;text-align:center;padding:34px 16px;overflow:hidden}
-.oyu{position:absolute;font-size:42px;opacity:.35;animation:float 4s infinite}
-@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-14px) rotate(8deg)}}
-.gold{position:absolute;width:8px;height:8px;background:#ffd700;border-radius:50%;animation:gold 3s infinite}
-@keyframes gold{0%{transform:translateY(0);opacity:1}100%{transform:translateY(260px);opacity:0}}
-.hero h1{font-size:34px;line-height:1.15;margin-top:18px}.hero h1 span{color:#ffd700}
-.hero p{color:#ffe9a8;margin:12px 0 18px}
+body{background:#fff7e6;color:#222}
+.top{position:sticky;top:0;z-index:20;background:#fff;display:flex;justify-content:space-between;align-items:center;padding:12px 16px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.logo{font-weight:900;font-size:18px}.logo span{color:#d4a017}
+.hero{position:relative;background:linear-gradient(180deg,#1a1200,#3a2800);color:#fff;text-align:center;padding:30px 16px;overflow:hidden}
+.hero h1{font-size:32px;line-height:1.15}.hero h1 span{color:#ffd700}
+.hero p{color:#ffe9a8;margin:10px 0 16px}
+.oyu{position:absolute;font-size:38px;opacity:.35;animation:fl 4s infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 .btn{display:block;width:100%;padding:15px;border-radius:16px;border:none;font-weight:800;font-size:16px;cursor:pointer;margin:8px 0}
-.btn-g{background:#ffd700;color:#111}.btn-w{background:#fff;color:#111;border:2px solid #111}.btn-d{background:#111;color:#fff}
-.card{background:#fff;border-radius:20px;padding:16px;margin:14px 16px;box-shadow:0 6px 20px rgba(0,0,0,.08)}
+.btn-g{background:#ffd700}.btn-w{background:#fff;border:2px solid #111}.btn-d{background:#111;color:#fff}
+.card{background:#fff;border-radius:20px;padding:16px;margin:14px 16px;box-shadow:0 6px 20px rgba(0,0,0,.07)}
 input,select,textarea{width:100%;padding:13px;border-radius:12px;border:1px solid #ddd;margin:7px 0;font-size:15px}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .chip{padding:12px;border-radius:12px;border:1px solid #ffd700;background:#fffdf0;font-weight:700;cursor:pointer;text-align:center}
 .chip.on{background:#ffd700}
-.design{border-radius:16px;padding:14px;color:#fff;cursor:pointer;min-height:110px;display:flex;flex-direction:column;justify-content:flex-end}
-.design b{font-size:16px}.design small{opacity:.9}
-.wheel{width:200px;height:200px;border-radius:50%;margin:12px auto;background:conic-gradient(#ffd700 0 60deg,#ff5a5a 60deg 120deg,#4ecdc4 120deg 180deg,#7c5cff 180deg 240deg,#ff9f43 240deg 300deg,#2ed573 300deg 360deg);display:flex;align-items:center;justify-content:center;transition:transform 2.5s cubic-bezier(.1,.8,.2,1);border:8px solid #fff;box-shadow:0 8px 20px rgba(0,0,0,.2)}
-.wheel span{background:#fff;border-radius:50%;width:64px;height:64px;display:flex;align-items:center;justify-content:center;font-size:28px}
-.env{width:220px;height:150px;background:#c0392b;margin:16px auto;position:relative;border-radius:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#fff;font-size:40px}
+.design{border-radius:16px;padding:14px;color:#fff;cursor:pointer;min-height:105px;display:flex;flex-direction:column;justify-content:flex-end}
+.env{width:220px;height:150px;background:#c0392b;margin:14px auto;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:44px;cursor:pointer;text-align:center}
 .env.open{background:#e74c3c}
-.gift{width:140px;height:140px;background:#e84393;margin:12px auto;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:60px;cursor:pointer}
-.world{height:200px;perspective:800px;overflow:hidden;background:linear-gradient(180deg,#0b2a4a,#ff9f43);border-radius:18px;display:flex;align-items:center;justify-content:center}
-.world div{width:130px;height:130px;background:linear-gradient(45deg,#ffd700,#ff5a5a);transform:rotateX(55deg) rotateZ(45deg);animation:spin 6s linear infinite;border:3px solid #fff}
-@keyframes spin{to{transform:rotateX(55deg) rotateZ(405deg)}}
+.wheel{width:190px;height:190px;border-radius:50%;margin:12px auto;background:conic-gradient(#ffd700 0 60deg,#ff5a5a 60deg 120deg,#4ecdc4 120deg 180deg,#7c5cff 180deg 240deg,#ff9f43 240deg 300deg,#2ed573 300deg 360deg);display:flex;align-items:center;justify-content:center;transition:transform 2.5s cubic-bezier(.1,.8,.2,1);border:8px solid #fff;box-shadow:0 8px 20px rgba(0,0,0,.2)}
+.wheel span{background:#fff;border-radius:50%;width:60px;height:60px;display:flex;align-items:center;justify-content:center;font-size:26px}
+.gift{width:130px;height:130px;background:#e84393;margin:12px auto;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:58px;cursor:pointer}
+.world{height:190px;perspective:800px;overflow:hidden;background:linear-gradient(180deg,#0b2a4a,#ff9f43);border-radius:18px;display:flex;align-items:center;justify-content:center}
+.world div{width:120px;height:120px;background:linear-gradient(45deg,#ffd700,#ff5a5a);transform:rotateX(55deg) rotateZ(45deg);animation:sp 6s linear infinite;border:3px solid #fff}
+@keyframes sp{to{transform:rotateX(55deg) rotateZ(405deg)}}
 .toast{position:fixed;left:16px;right:16px;bottom:16px;background:#111;color:#fff;padding:14px;border-radius:14px;text-align:center;display:none;z-index:99}
+.wall{display:flex;flex-wrap:wrap;gap:8px}.wall span{background:#fff3b0;padding:8px 10px;border-radius:12px;font-size:13px}
 .hide{display:none}
-.tabs{display:flex;gap:8px;overflow:auto;padding:0 16px}
-.tabs button{white-space:nowrap;padding:10px 14px;border-radius:20px;border:1px solid #ddd;background:#fff;font-weight:700;cursor:pointer}
-.tabs button.on{background:#111;color:#fff}
-.wall{display:flex;flex-wrap:wrap;gap:8px}.wall span{background:#fff3b0;padding:8px 10px;border-radius:12px;font-size:13px;animation:float 3s infinite}
+.tabs{display:flex;gap:8px;overflow:auto;padding:0 16px}.tabs button{white-space:nowrap;padding:10px 14px;border-radius:20px;border:1px solid #ddd;background:#fff;font-weight:700}
 </style></head>
 <body>
-<div class="top"><div class="logo">🎉 Тойға <span>Ерекше Шақырту</span></div><button onclick="showCabinet()" style="padding:8px 12px;border-radius:10px;border:1px solid #ddd;background:#fff;font-weight:700">👤 Кабинет</button></div>
+<div class="top"><div class="logo">🎉 Тойға <span>Ерекше Шақырту 2.0</span></div><button onclick="go('cabinet')" style="padding:8px 12px;border-radius:10px;border:1px solid #ddd;background:#fff;font-weight:700">👤 Кабинет</button></div>
 
-<!-- 1. БАСТЫ БЕТ -->
 <div class="hero">
-<span class="oyu" style="left:10px;top:20px">☪</span><span class="oyu" style="right:12px;top:60px;animation-delay:.5s">✦</span><span class="oyu" style="left:20px;bottom:80px;animation-delay:1s">❀</span><span class="oyu" style="right:20px;bottom:120px">◆</span>
-<span class="gold" style="left:20%"></span><span class="gold" style="left:50%;animation-delay:.7s"></span><span class="gold" style="left:80%;animation-delay:1.2s"></span>
+<span class="oyu" style="left:10px;top:10px">☪</span><span class="oyu" style="right:12px;top:50px">✦</span><span class="oyu" style="left:16px;bottom:70px">❀</span>
 <h1>Қуанышыңызды<br><span>ерекше бөлісіңіз!</span></h1>
-<p>Конверт, кино, дауыс, 3D әлем және құпия сыйлық — бәрі бір жерде.</p>
-<button class="btn btn-g" onclick="go('builder')">✨ Шақырту жасау</button>
-<button class="btn" style="background:#fff" onclick="go('designs')">🎨 Ерекше үлгілер</button>
+<p>Конверт + Кино + Дауыс + 3D + Сыйлық + Kaspi сыйлық + Алғыс видео</p>
+<button class="btn btn-g" onclick="go('builder')">✨ Шақырту жасау — Тегін бастау</button>
+<button class="btn" style="background:#fff" onclick="go('designs')">🎨 Ерекше үлгілер (20)</button>
 <button class="btn" style="background:transparent;color:#fff;border:2px solid #ffd700" onclick="go('ready')">📩 Дайын шақыртулар</button>
 <button class="btn" style="background:#333;color:#fff" id="musicBtn" onclick="toggleMusic()">🎵 Музыка: өшірулі</button>
 <audio id="music" loop><source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3"></audio>
-<p id="countdown" style="font-weight:800;margin-top:10px">Тойға дейін: —</p>
+<p id="countdown" style="font-weight:800;margin-top:8px">Тойға дейін: —</p>
 </div>
 
-<div class="tabs" id="tabs"></div>
+<div class="tabs"><button onclick="go('builder')">Шақырту жасау</button><button onclick="go('giftSys')">Сыйлық</button><button onclick="go('aiScenario')">AI Сценарий</button><button onclick="go('cabinet')">Кабинет</button></div>
 
-<!-- 2. AI + BUILDER -->
-<div class="card" id="builder">
-<h2>🛠️ Шақырту жасау</h2>
-<p style="color:#666;font-size:13px">Алдымен той түрін таңда — AI бәрін өзі жазып береді.</p>
+<!-- КОНСТРУКТОР -->
+<div class="card" id="builder"><h2>🛠️ Шақырту жасау — 1 қадам</h2>
 <div class="grid2" id="toiTypes"></div>
-<input id="f_name1" placeholder="Той иесі 1: мысалы, Нұрлан">
-<input id="f_name2" placeholder="Той иесі 2: мысалы, Аяулым">
-<input id="f_date" type="date">
-<input id="f_place" placeholder="Орыны: мейрамхана, қала">
+<input id="f_name1" placeholder="Той иесі 1: Нұрлан"><input id="f_name2" placeholder="Той иесі 2: Аяулым">
+<input id="f_date" type="date"><input id="f_place" placeholder="Орыны: мейрамхана, қала">
 <input id="f_guest" placeholder="Қонақтың аты (жеке сілтеме үшін)">
-<div id="aiOut" style="background:#fffbe6;border-radius:12px;padding:12px;margin:8px 0;font-size:14px;line-height:1.5">AI: Той түрін таңда — мәтін, тілек, дизайн, музыка ұсынамын.</div>
-<button class="btn btn-g" onclick="makeInvite()">✅ Шақыртуды жасау + Жеке сілтеме алу</button>
+<select id="dressSelect"><option>👗 Дресс-код: Алтын</option><option>👗 Дресс-код: Бордо</option><option>👗 Дресс-код: Изумруд</option><option>👗 Дресс-код: Ақ</option><option>👗 Дресс-код: Еркін</option></select>
+<div id="aiOut" style="background:#fffbe6;border-radius:12px;padding:12px;font-size:14px;line-height:1.5">AI: Той түрін таңда — мәтін, тілек, дизайн, музыка дайындаймын.</div>
+<button class="btn btn-g" onclick="makeInvite()">✅ Шақырту жасау + Жеке сілтеме</button>
 <button class="btn btn-w" onclick="copyLink()">🔗 Сілтемені көшіру</button>
-<div id="preview"></div>
+<button class="btn btn-w" onclick="shareInvite()">📤 WhatsApp-пен бөлісу</button>
+<div id="preview"></div></div>
+
+<!-- ФУНКЦИЯЛАР -->
+<div class="card"><h2>✨ Ерекше функциялар — қосу / өшіру</h2>
+<label><input type="checkbox" id="ft_env" checked> 💌 Сиқырлы конверт</label><br>
+<label><input type="checkbox" id="ft_cinema" checked> 🎬 Кино шақырту</label><br>
+<label><input type="checkbox" id="ft_voice" checked> 🎤 Дауысты шақырту</label><br>
+<label><input type="checkbox" id="ft_3d" checked> 🌍 3D әлем</label><br>
+<label><input type="checkbox" id="ft_gift" checked> 🎁 Құпия сыйлық</label>
+<div class="env" id="envelope" onclick="openEnvelope()">💌<br><small style="font-size:12px">Конвертті бас</small></div>
+<div style="height:170px;border-radius:16px;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;padding:12px" id="cinema">🎬 Кино шақырту<br>Фото жүкте, трейлер басталады</div>
+<input type="file" accept="image/*" onchange="loadPhoto(event,'cinema')">
+<button class="btn btn-d" onclick="playCinema()">▶ Трейлерді ойнату</button>
+<h3>🎤 Дауысты шақырту</h3><p style="font-size:13px;color:#666">«Құрметті ағайын-туыс, сіздерді қуанышымыздың қадірлі қонағы болуға шақырамыз!»</p>
+<button class="btn btn-g" onclick="recordVoice()">● Дауыс жазу (8 сек)</button><button class="btn btn-w" onclick="playVoice()">▶ Тыңдау</button><button class="btn btn-w" onclick="deleteVoice()">🗑 Өшіру</button><audio id="voicePlayer" controls class="hide" style="width:100%"></audio><p id="voiceStatus" style="font-size:13px"></p>
+<h3>🌍 3D Виртуалды әлем</h3><div class="world"><div></div></div>
+<h3>🎁 Құпия сыйлық</h3><input id="giftText" placeholder="Қонаққа құпия хабарлама жаз..."><div class="gift" onclick="openGift()">🎁</div><p id="giftOut" style="text-align:center"></p>
 </div>
 
-<!-- 3+13. КОНВЕРТ / КИНО / ДАУЫС / 3D / СЫЙЛЫҚ -->
-<div class="card">
-<h2>💌 Сиқырлы конверт + 🎬 Кино шақырту</h2>
-<label><input type="checkbox" id="ft_env" checked> Конверт қосулы</label><br>
-<label><input type="checkbox" id="ft_cinema" checked> Кино шақырту қосулы</label><br>
-<label><input type="checkbox" id="ft_voice" checked> Дауыс қосулы</label><br>
-<label><input type="checkbox" id="ft_3d" checked> 3D әлем қосулы</label><br>
-<label><input type="checkbox" id="ft_gift" checked> Құпия сыйлық қосулы</label>
-<div id="envBox"><div class="env" id="envelope" onclick="openEnvelope()">💌<br><small style="font-size:12px">Басыңыз</small></div><p style="text-align:center;font-size:13px;color:#666">Конвертті бас — ішінен шақырту шығады</p></div>
-<div id="cinemaBox"><div style="height:180px;border-radius:16px;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;padding:14px" id="cinema">🎬 Кино шақырту<br>Фотоңды жүкте, трейлер басталады</div><input type="file" accept="image/*" onchange="loadPhoto(event,'cinema')"><button class="btn btn-d" onclick="playCinema()">▶ Трейлерді ойнату</button></div>
-<div id="voiceBox"><h3>🎤 Дауысты шақырту</h3><p style="font-size:13px;color:#666">«Құрметті ағайын-туыс, сіздерді қуанышымыздың қадірлі қонағы болуға шақырамыз!»</p><button class="btn btn-g" onclick="recordVoice()">● Жазу</button><button class="btn btn-w" onclick="playVoice()">▶ Тыңдау</button><button class="btn btn-w" onclick="deleteVoice()">🗑 Өшіру</button><audio id="voicePlayer" controls class="hide" style="width:100%"></audio><p id="voiceStatus" style="font-size:13px"></p></div>
-<div id="worldBox"><h3>🌍 3D Виртуалды әлем</h3><div class="world"><div></div></div><p style="font-size:13px;color:#666;text-align:center">Айналатын қазақы 3D әлем — телефонда да жылдам</p></div>
-<div id="giftBox"><h3>🎁 Құпия сыйлық</h3><input id="giftText" placeholder="Қонаққа құпия хабарлама жаз: мысалы, Сізге арнайы сый бар!"><div class="gift" onclick="openGift()">🎁</div><p id="giftOut" style="text-align:center"></p></div>
-</div>
+<!-- СЫЙЛЫҚ ЖҮЙЕСІ — ЖАҢА -->
+<div class="card" id="giftSys"><h2>💸 Сыйлық тізімі + Kaspi</h2><p style="font-size:13px;color:#666">Той иесі не керек екенін жазады, қонақ Kaspi арқылы жібереді.</p>
+<input id="giftItem" placeholder="Мысалы: Шәйнек — 25 000 ₸"><button class="btn btn-g" onclick="addGiftItem()">➕ Тізімге қосу</button><div id="giftList"></div><p id="giftTotal" style="font-weight:800"></p>
+<button class="btn btn-d" onclick="sendKaspi()">💳 Kaspi арқылы сый жіберу</button><p style="font-size:12px;color:#888">Демо: 2-кезеңде нақты Kaspi QR қосылады. Қазір сыйлықтар тізімде сақталады.</p></div>
 
-<!-- 4. ВИДЕО -->
-<div class="card"><h2>🎥 Видео шақырту</h2><p style="font-size:13px;color:#666">Фото / видео жүкте, музыка таңда, бөліс.</p>
-<input type="file" accept="image/*,video/*" multiple onchange="loadMedia(event)">
-<div id="mediaPreview" style="display:flex;gap:8px;flex-wrap:wrap;margin:8px 0"></div>
-<select id="musicSelect"><option>🎵 Той әуені 1</option><option>🎵 Той әуені 2</option><option>🎵 Той әуені 3</option></select>
-<button class="btn btn-g" onclick="shareInvite()">📤 Дайын шақыртуды бөлісу (WhatsApp)</button></div>
+<!-- AI СЦЕНАРИЙ — ЖАҢА -->
+<div class="card" id="aiScenario"><h2>🎤 AI Той Сценарийі</h2><p style="font-size:13px;color:#666">Той түріне қарай дайын сценарий, ведущий мәтіні, 10 ойын.</p>
+<button class="btn btn-g" onclick="makeScenario()">🤖 Сценарий жасау</button><div id="scenarioOut" style="background:#f7f7ff;border-radius:12px;padding:12px;font-size:14px;line-height:1.6">Той түрін таңдап, батырманы бас.</div></div>
 
-<!-- 5. ҚОНАҚ -->
-<div class="card" id="guest"><h2>👥 Қонаққа арналған жүйе</h2>
-<input id="g_name" placeholder="Сіздің есіміңіз">
-<select id="g_count"><option>1 адам</option><option>2 адам</option><option>3 адам</option><option>4 адам</option></select>
-<textarea id="g_wish" placeholder="Той иесіне тілегіңізді жазыңыз..."></textarea>
-<button class="btn btn-g" onclick="confirmGuest()">✅ Қатысатынымды растаймын</button>
-<p id="guestOut" style="font-size:14px;margin-top:8px"></p>
-<p style="font-size:13px;color:#666">Растаған қонақтар: <b id="guestCount">0</b> • Барлық адам: <b id="peopleCount">0</b></p></div>
+<!-- ВИДЕО + АЛҒЫС -->
+<div class="card"><h2>🎥 Видео шақырту + 🎉 Алғыс видео</h2>
+<input type="file" accept="image/*,video/*" multiple onchange="loadMedia(event)"><div id="mediaPreview" style="display:flex;gap:8px;flex-wrap:wrap"></div>
+<button class="btn btn-g" onclick="makeThanksVideo()">🎉 Тойдан кейінгі Алғыс видеосын жасау</button><div id="thanksOut" style="font-size:14px;background:#fffbe6;border-radius:12px;padding:12px;margin-top:8px">Фото + тілектерден автоматты «Рақмет» видеосы жасалады.</div></div>
 
-<!-- 6. ИНТЕРАКТИВ -->
+<!-- ҚОНАҚ -->
+<div class="card" id="guest"><h2>👥 Қонақ жүйесі</h2>
+<input id="g_name" placeholder="Сіздің есіміңіз"><select id="g_count"><option>1 адам</option><option>2 адам</option><option>3 адам</option><option>4 адам</option></select><textarea id="g_wish" placeholder="Той иесіне тілегіңіз..."></textarea>
+<button class="btn btn-g" onclick="confirmGuest()">✅ Қатысатынымды растаймын</button><p id="guestOut"></p><p>Растаған: <b id="guestCount">0</b> • Барлық адам: <b id="peopleCount">0</b></p>
+<button class="btn btn-w" onclick="openMap()">🗺 Картаны ашу</button><button class="btn btn-w" onclick="callTaxi()">🚕 Такси шақыру</button><button class="btn btn-w" onclick="addToCalendar()">📅 Күнтізбеге қосу</button></div>
+
+<!-- ИНТЕРАКТИВ -->
 <div class="card"><h2>🎡 Бақытты дөңгелек</h2><div class="wheel" id="wheel"><span>🎁</span></div><button class="btn btn-g" onclick="spinWheel()">🎡 Айналдыру</button><p id="wheelOut" style="text-align:center;font-weight:700"></p></div>
 <div class="card"><h2>💬 Тілек қабырғасы</h2><div class="wall" id="wall"></div><input id="wallInput" placeholder="Тілегіңді жаз..."><button class="btn btn-w" onclick="addWish()">➕ Тілек қалдыру</button></div>
-<div class="card"><h2>📸 Той фотоальбомы + Ортақ желі</h2><input type="file" accept="image/*" onchange="loadMedia(event)"><p style="font-size:13px;color:#666">Қонақтардың фотолары осында жиналады.</p></div>
 
-<!-- 7. ТОЙ КҮНІ -->
-<div class="card"><h2>📅 Той күніндегі жүйе</h2>
-<button class="btn btn-w" onclick="addToCalendar()">📅 Күнтізбеге қосу</button>
-<button class="btn btn-w" onclick="openMap()">🗺 Картаны ашу</button>
-<button class="btn btn-g" onclick="remindWhatsApp()">💬 WhatsApp-пен еске салу</button>
-<p style="font-size:13px;color:#666">Той күні: <span id="dateLabel">таңдалмады</span></p></div>
+<!-- ДИЗАЙН -->
+<div class="card" id="designs"><h2>🎨 20 Ерекше дизайн</h2><div class="grid2" id="designList"></div></div>
+<div class="card" id="ready"><h2>📩 Дайын шақыртулар</h2><div id="savedList"></div></div>
 
-<!-- 8. ДИЗАЙНДАР -->
-<div class="card" id="designs"><h2>🎨 20+ Ерекше дизайн</h2><div class="grid2" id="designList"></div></div>
-<div class="card" id="ready"><h2>📩 Дайын шақыртулар</h2><p style="font-size:14px">Жоғарыда жасаған шақыртуың осында сақталады. Кабинеттен көре аласың.</p><div id="savedList"></div></div>
-
-<!-- 9. ТАРИФ -->
-<div class="card"><h2>💰 Тарифтер — Алдымен тегін көр, ұнаса төле</h2>
-<div class="grid2">
+<!-- ТАРИФ -->
+<div class="card"><h2>💰 Тариф — Алдымен тегін көр, ұнаса төле</h2><div class="grid2">
 <div style="border:2px solid #cd7f32;border-radius:16px;padding:14px"><b>🥉 ҚОЛА</b><h3>3000 ₸</h3><p style="font-size:13px">1 дизайн • 20 қонақ</p><button class="btn btn-w" onclick="buy('ҚОЛА',3000)">Таңдау</button></div>
-<div style="border:2px solid #c0c0c0;border-radius:16px;padding:14px"><b>🥈 КҮМІС</b><h3>5000 ₸</h3><p style="font-size:13px">Барлық дизайн • Видео • Дауыс</p><button class="btn btn-w" onclick="buy('КҮМІС',5000)">Таңдау</button></div>
-</div><div style="border:2px solid #ffd700;border-radius:16px;padding:14px;margin-top:10px;background:#fffbe6"><b>🥇 АЛТЫН</b><h3>10000 ₸</h3><p style="font-size:13px">Барлығы + Кино + 3D + Құпия сыйлық + Шексіз қонақ</p><button class="btn btn-g" onclick="buy('АЛТЫН',10000)">Таңдау</button></div>
-<p id="payOut" style="font-size:13px;color:#666;margin-top:8px">Төлем: Kaspi / карта арқылы — әзірге демо, келесі кезеңде нақты төлем қосамыз.</p></div>
+<div style="border:2px solid #c0c0c0;border-radius:16px;padding:14px"><b>🥈 КҮМІС</b><h3>5000 ₸</h3><p style="font-size:13px">Барлық дизайн • Видео • Дауыс</p><button class="btn btn-w" onclick="buy('КҮМІС',5000)">Таңдау</button></div></div>
+<div style="border:2px solid #ffd700;border-radius:16px;padding:14px;margin-top:10px;background:#fffbe6"><b>🥇 АЛТЫН</b><h3>10000 ₸</h3><p style="font-size:13px">Барлығы + Кино + 3D + Сыйлық + Сыйлық тізімі + Алғыс видео</p><button class="btn btn-g" onclick="buy('АЛТЫН',10000)">Таңдау</button></div><p id="payOut" style="font-size:13px;color:#666;margin-top:8px"></p></div>
 
-<!-- 10. КАБИНЕТ -->
-<div class="card" id="cabinet"><h2>👤 Жеке кабинет</h2><p style="font-size:13px;color:#666">Шақыртуларың, қонақтарың, төлем тарихың — бәрі осында сақталады.</p><div id="cabinetOut"></div><button class="btn btn-w" onclick="clearAll()">🗑 Барлығын өшіру</button></div>
-
-<div style="text-align:center;padding:20px;color:#fff;font-size:13px;background:#111">© 2026 Тойға Ерекше Шақырту • Қазақстан • WhatsApp • Қауіпсіздік: дерек тек сіздің телефоныңызда сақталады</div>
+<!-- КАБИНЕТ -->
+<div class="card" id="cabinet"><h2>👤 Жеке кабинет</h2><div id="cabinetOut"></div><button class="btn btn-w" onclick="clearAll()">🗑 Барлығын өшіру</button></div>
+<div style="text-align:center;padding:20px;color:#fff;font-size:13px;background:#111">© 2026 Тойға Ерекше Шақырту 2.0 • Қазақстан • Қауіпсіздік: дерек телефоныңда сақталады</div>
 <div class="toast" id="toast"></div>
 <script>
 var TOIS=["Үйлену тойы","Қыз ұзату","Сүндет той","Бесік той","Тұсаукесер","Мерейтой","Туған күн","Беташар","Құдалық","Неке"];
 var DESIGNS=[["Алтын Lux","#d4a017"],["Royal Wedding","#4b0082"],["Қазақы ою","#8b4513"],["Ақ Көгершін","#6aa9ff"],["Изумруд","#00755e"],["Бордо","#7b1e2b"],["Luxury Black","#111"],["Көк Аспан","#00aaff"],["Романтикалық гүлдер","#e84393"],["Заманауи минимализм","#888"],["Алтын-Қызғылт","#ff8fab"],["Хан Сарайы","#b8860b"],["Ақ Жібек","#aaa"],["Көктем","#2ed573"],["Түнгі Жұлдыз","#1e1e5e"],["Шаңырақ","#c0392b"],["Арай","#ff9f43"],["Нұр","#ffd700"],["Сакура","#ffb6c1"],["Корольдік Қызыл","#c0392b"]];
-var selToi="",selDesign="Алтын Lux",invites=JSON.parse(localStorage.getItem("invites")||"[]"),guests=JSON.parse(localStorage.getItem("guests")||"[]"),wishes=JSON.parse(localStorage.getItem("wishes")||["Бақытты болыңдар! ❤️","Қуаныштарың көп болсын!"]),mediaRecorder=null,voiceBlob=null;
+var selToi="",selDesign="Алтын Lux";
+var invites=JSON.parse(localStorage.getItem("invites")||"[]"),guests=JSON.parse(localStorage.getItem("guests")||"[]"),wishes=JSON.parse(localStorage.getItem("wishes")||["Бақытты болыңдар! ❤️"]),gifts=JSON.parse(localStorage.getItem("gifts")||["Шәйнек — 25 000 ₸","Төсек жабдығы — 40 000 ₸"]);
+var mediaRecorder=null,voiceBlob=null;
 function toast(t){var e=document.getElementById("toast");e.textContent=t;e.style.display="block";setTimeout(()=>e.style.display="none",2500)}
 function go(id){document.getElementById(id).scrollIntoView({behavior:"smooth"})}
 function render(){
 var t=document.getElementById("toiTypes");t.innerHTML="";TOIS.forEach(x=>{var b=document.createElement("div");b.className="chip"+(selToi===x?" on":"");b.textContent=x;b.onclick=()=>{selToi=x;render();aiSuggest()};t.appendChild(b)});
-var d=document.getElementById("designList");d.innerHTML="";DESIGNS.forEach(x=>{var el=document.createElement("div");el.className="design";el.style.background=x[1];el.innerHTML="<b>"+x[0]+"</b><small>Таңдау үшін бас</small>";el.onclick=()=>{selDesign=x[0];toast("Дизайн таңдалды: "+x[0])};d.appendChild(el)});
+var d=document.getElementById("designList");d.innerHTML="";DESIGNS.forEach(x=>{var el=document.createElement("div");el.className="design";el.style.background=x[1];el.innerHTML="<b>"+x[0]+"</b><small>Таңдау үшін бас</small>";el.onclick=()=>{selDesign=x[0];toast("Дизайн: "+x[0])};d.appendChild(el)});
 var w=document.getElementById("wall");w.innerHTML="";wishes.forEach(x=>{var s=document.createElement("span");s.textContent=x;w.appendChild(s)});
 document.getElementById("guestCount").textContent=guests.length;document.getElementById("peopleCount").textContent=guests.reduce((a,g)=>a+(parseInt(g.count)||1),0);
-var sl=document.getElementById("savedList");sl.innerHTML=invites.length?invites.map((x,i)=>"<p>• "+x.n1+" ❤️ "+x.n2+" — "+x.toi+" • "+x.design+"</p>").join(""):"<p style='color:#888'>Әлі шақырту жоқ. Жоғарыдан жаса.</p>";
-var c=document.getElementById("cabinetOut");c.innerHTML="<p>Шақыртулар: <b>"+invites.length+"</b> • Қонақтар: <b>"+guests.length+"</b> • Таңдалған дизайн: <b>"+selDesign+"</b></p>"+(invites.length?invites.map(x=>"<p>🔗 "+location.origin+location.pathname+"?id="+x.id+"</p>").join(""):"");
-var tabs=["Шақырту жасау","Дизайндар","Дайын шақыртулар","Кабинет"];document.getElementById("tabs").innerHTML="";tabs.forEach(x=>{var b=document.createElement("button");b.textContent=x;b.onclick=()=>go(x==="Шақырту жасау"?"builder":x==="Дизайндар"?"designs":x==="Дайын шақыртулар"?"ready":"cabinet");document.getElementById("tabs").appendChild(b)});
+document.getElementById("savedList").innerHTML=invites.length?invites.map(x=>"<p>• "+x.n1+" ❤️ "+x.n2+" — "+x.toi+" • "+x.design+" • ?id="+x.id+"</p>").join(""):"<p style='color:#888'>Әлі шақырту жоқ.</p>";
+document.getElementById("cabinetOut").innerHTML="<p>Шақыртулар: <b>"+invites.length+"</b> • Қонақтар: <b>"+guests.length+"</b> • Дизайн: <b>"+selDesign+"</b> • Сыйлықтар: <b>"+gifts.length+"</b></p>";
+document.getElementById("giftList").innerHTML=gifts.map((g,i)=>"<p style='display:flex;justify-content:space-between;background:#fffbe6;padding:10px;border-radius:10px;margin:5px 0'>"+g+" <button onclick=\"buyGift("+i+")\" style='padding:6px 10px;border-radius:8px;background:#111;color:#fff;border:none'>Сыйлау</button></p>").join("");
+document.getElementById("giftTotal").textContent="Тізімде: "+gifts.length+" сыйлық";
 updateCountdown();
 }
-function aiSuggest(){
-var texts={"Үйлену тойы":"Құрметті ағайын-туыс! Екі жас шаңырақ көтеріп, өмірдің жаңа парағын ашқалы отыр.","Қыз ұзату":"Аяулы қызымызды ақ жолмен ұзатып, жаңа өмірге шығарып саламыз.","Сүндет той":"Балапанымыздың азамат болуға алғашқы қадамы — сүндет тойына шақырамыз!","Бесік той":"Бөбегіміздің бесік тойы — қуанышымызды бөлісіңіздер!"};
-document.getElementById("aiOut").innerHTML="<b>🤖 AI ұсынысы — "+selToi+"</b><br>✍️ Мәтін: "+(texts[selToi]||"Қуанышымызға ортақ болуға шақырамыз!")+"<br>💌 Тілек: Бақытты, берекелі, ғұмырлы болыңдар!<br>🎨 Дизайн: "+selDesign+" • Алтын Lux ұсынылады<br>🎵 Музыка: Той әуені 1 • Қазақша нақыштағы мәтін дайын";
-}
-function makeInvite(){
-var n1=document.getElementById("f_name1").value||"Нұрлан",n2=document.getElementById("f_name2").value||"Аяулым",d=document.getElementById("f_date").value||"2026-12-31",p=document.getElementById("f_place").value||"Астана",g=document.getElementById("f_guest").value||"Құрметті қонақ";
-if(!selToi){toast("Алдымен той түрін таңда!");return}
-var id="TOI"+Date.now().toString().slice(-6);var inv={id:id,toi:selToi,n1:n1,n2:n2,date:d,place:p,guest:g,design:selDesign};
-invites.push(inv);localStorage.setItem("invites",JSON.stringify(invites));
-document.getElementById("dateLabel").textContent=d;updateCountdown();
-document.getElementById("preview").innerHTML="<div style='background:linear-gradient(135deg,#fff7cc,#ffd700);border-radius:16px;padding:18px;text-align:center;margin-top:12px'><h3>🎉 "+n1+" ❤️ "+n2+"</h3><p>"+selToi+" • "+selDesign+"</p><p>📅 "+d+"<br>📍 "+p+"<br>👤 "+g+"</p><p>Қуанышымызға ортақ болыңыздар!</p><p style='font-size:12px'>Жеке сілтеме: ?id="+id+"</p></div>";
-toast("Шақырту жасалды! ID: "+id);render();
-}
-function copyLink(){var last=invites[invites.length-1];if(!last){toast("Алдымен шақырту жаса!");return}var link=location.origin+location.pathname+"?id="+last.id;navigator.clipboard.writeText(link).then(()=>toast("Сілтеме көшірілді!")); }
-function openEnvelope(){if(!document.getElementById("ft_env").checked){toast("Конверт өшірулі — баптаудан қос");return}var e=document.getElementById("envelope");e.classList.add("open");e.innerHTML="✉️ Ашылды!";setTimeout(()=>{e.innerHTML="🎉 Шақырту шықты!";toast("Конверт ашылды! Шақырту дайын!")},600)}
+function aiSuggest(){var txt={"Үйлену тойы":"Екі жас шаңырақ көтеріп, жаңа өмір бастайды.","Қыз ұзату":"Аяулы қызымызды ақ жолмен ұзатамыз.","Сүндет той":"Балапанымыздың азаматтыққа алғашқы қадамы.","Бесік той":"Бөбегіміздің бесік тойы."};document.getElementById("aiOut").innerHTML="<b>🤖 AI — "+selToi+"</b><br>✍️ "+(txt[selToi]||"Қуанышымызға ортақ болыңыз!")+"<br>💌 Тілек: Бақытты, берекелі болыңдар!<br>🎨 Дизайн: "+selDesign+"<br>🎵 Музыка: Той әуені 1";}
+function makeInvite(){if(!selToi){toast("Алдымен той түрін таңда!");return}var n1=document.getElementById("f_name1").value||"Нұрлан",n2=document.getElementById("f_name2").value||"Аяулым",d=document.getElementById("f_date").value||"2026-12-31",p=document.getElementById("f_place").value||"Астана",g=document.getElementById("f_guest").value||"Құрметті қонақ";var id="TOI"+Date.now().toString().slice(-6);var inv={id:id,toi:selToi,n1:n1,n2:n2,date:d,place:p,guest:g,design:selDesign};invites.push(inv);localStorage.setItem("invites",JSON.stringify(invites));document.getElementById("preview").innerHTML="<div style='background:linear-gradient(135deg,#fff7cc,#ffd700);border-radius:16px;padding:18px;text-align:center;margin-top:12px'><h3>🎉 "+n1+" ❤️ "+n2+"</h3><p>"+selToi+" • "+selDesign+"</p><p>📅 "+d+"<br>📍 "+p+"<br>👤 "+g+"<br>👗 "+document.getElementById("dressSelect").value+"</p><p>Жеке сілтеме: ?id="+id+"</p></div>";toast("Шақырту жасалды! ID: "+id);render();}
+function copyLink(){var l=invites[invites.length-1];if(!l){toast("Алдымен шақырту жаса!");return}navigator.clipboard.writeText(location.origin+location.pathname+"?id="+l.id).then(()=>toast("Сілтеме көшірілді!"))}
+function shareInvite(){var l=invites[invites.length-1];if(!l){toast("Алдымен шақырту жаса!");return}window.open("https://wa.me/?text="+encodeURIComponent("🎉 Тойға шақырту! "+l.n1+" ❤️ "+l.n2+" • "+l.toi+" • "+l.date+" • "+location.origin+location.pathname+"?id="+l.id),"_blank")}
+function openEnvelope(){if(!document.getElementById("ft_env").checked){toast("Конверт өшірулі");return}var e=document.getElementById("envelope");e.classList.add("open");e.innerHTML="✉️ Ашылды!";setTimeout(()=>{e.innerHTML="🎉 Шақырту шықты!";toast("Конверт ашылды!")},600)}
 function loadPhoto(ev,id){var f=ev.target.files[0];if(!f)return;var r=new FileReader();r.onload=e=>{document.getElementById(id).innerHTML="<img src='"+e.target.result+"' style='width:100%;height:100%;object-fit:cover;border-radius:16px'>"};r.readAsDataURL(f)}
 function loadMedia(ev){var box=document.getElementById("mediaPreview");[...ev.target.files].forEach(f=>{var r=new FileReader();r.onload=e=>{var im=document.createElement("img");im.src=e.target.result;im.style="width:80px;height:80px;object-fit:cover;border-radius:12px";box.appendChild(im)};r.readAsDataURL(f)});toast("Фото жүктелді!")}
-function playCinema(){if(!document.getElementById("ft_cinema").checked){toast("Кино шақырту өшірулі");return}var c=document.getElementById("cinema");var msgs=["🎬 Трейлер басталады...","❤️ Екі жас...","🎉 Тойымызға шақырамыз!"];var i=0;var iv=setInterval(()=>{c.innerHTML=msgs[i];i++;if(i>=msgs.length){clearInterval(iv);toast("Кино шақырту дайын!")}},1000)}
-async function recordVoice(){try{var s=await navigator.mediaDevices.getUserMedia({audio:true});mediaRecorder=new MediaRecorder(s);var chunks=[];mediaRecorder.ondataavailable=e=>chunks.push(e.data);mediaRecorder.onstop=()=>{voiceBlob=new Blob(chunks,{type:"audio/webm"});var url=URL.createObjectURL(voiceBlob);var p=document.getElementById("voicePlayer");p.src=url;p.classList.remove("hide");document.getElementById("voiceStatus").textContent="✅ Дауыс жазылды! Тыңдап көр."};mediaRecorder.start();document.getElementById("voiceStatus").textContent="● Жазылуда... Сөйлеңіз!";setTimeout(()=>mediaRecorder.stop(),8000);toast("8 секунд жазылады...")}catch(e){document.getElementById("voiceStatus").textContent="Микрофонға рұқсат беріңіз."}}
-function playVoice(){if(!voiceBlob){toast("Алдымен дауыс жаз!");return}document.getElementById("voicePlayer").play()}
-function deleteVoice(){voiceBlob=null;document.getElementById("voicePlayer").classList.add("hide");document.getElementById("voiceStatus").textContent="Дауыс өшірілді."}
-function openGift(){if(!document.getElementById("ft_gift").checked){toast("Құпия сыйлық өшірулі");return}var t=document.getElementById("giftText").value||"Сізге арнайы сый бар! Тойда кездескенше!";document.getElementById("giftOut").innerHTML="🎉 "+t;toast("Сыйлық ашылды!")}
-function spinWheel(){var prizes=["🎁 Сыйлық!","💃 Би биле!","🎤 Ән айт!","😂 Әзіл айт!","❤️ Құттықтау!","🎉 Тағы айналдыр!"];var deg=1440+Math.floor(Math.random()*360);document.getElementById("wheel").style.transform="rotate("+deg+"deg)";setTimeout(()=>{var p=prizes[Math.floor(Math.random()*prizes.length)];document.getElementById("wheelOut").textContent=p;toast(p)},2600)}
+function playCinema(){if(!document.getElementById("ft_cinema").checked){toast("Кино өшірулі");return}var c=document.getElementById("cinema");var m=["🎬 Трейлер...","❤️ Екі жас...","🎉 Тойымызға шақырамыз!"];var i=0;var iv=setInterval(()=>{c.innerHTML=m[i];i++;if(i>=m.length){clearInterval(iv);toast("Кино дайын!")}},1000)}
+async function recordVoice(){try{var s=await navigator.mediaDevices.getUserMedia({audio:true});mediaRecorder=new MediaRecorder(s);var ch=[];mediaRecorder.ondataavailable=e=>ch.push(e.data);mediaRecorder.onstop=()=>{voiceBlob=new Blob(ch,{type:"audio/webm"});var p=document.getElementById("voicePlayer");p.src=URL.createObjectURL(voiceBlob);p.classList.remove("hide");document.getElementById("voiceStatus").textContent="✅ Дауыс жазылды!"};mediaRecorder.start();document.getElementById("voiceStatus").textContent="● Жазылуда...";setTimeout(()=>mediaRecorder.stop(),8000)}catch(e){document.getElementById("voiceStatus").textContent="Микрофонға рұқсат бер."}}
+function playVoice(){if(!voiceBlob){toast("Алдымен жаз!");return}document.getElementById("voicePlayer").play()}
+function deleteVoice(){voiceBlob=null;document.getElementById("voicePlayer").classList.add("hide");document.getElementById("voiceStatus").textContent="Өшірілді."}
+function openGift(){if(!document.getElementById("ft_gift").checked){toast("Сыйлық өшірулі");return}var t=document.getElementById("giftText").value||"Сізге арнайы сый бар!";document.getElementById("giftOut").innerHTML="🎉 "+t}
+function addGiftItem(){var v=document.getElementById("giftItem").value;if(!v)return;gifts.push(v);localStorage.setItem("gifts",JSON.stringify(gifts));document.getElementById("giftItem").value="";render();toast("Сыйлық қосылды!")}
+function buyGift(i){toast("🎁 Сыйлық таңдалды: "+gifts[i]+" — Kaspi арқылы жіберуге болады!")}
+function sendKaspi(){toast("Kaspi сілтемесі ашылады... 2-кезеңде нақты QR қосылады. Қазір тізім сақталды.");window.open("https://kaspi.kz/","_blank")}
+function makeScenario(){if(!selToi){toast("Той түрін таңда!");return}document.getElementById("scenarioOut").innerHTML="<b>🎤 AI Сценарий — "+selToi+"</b><br>1. Қонақтарды күлімдеп қарсы алу, «Қош келдіңіздер!»<br>2. Той иелерін қол соғып шығару<br>3. Бірінші тілек — ата-анадан<br>4. Ойын 1: «Кім жылдам?» — қонақтар билейді<br>5. Ойын 2: «Сыйлық ұту» — дөңгелек айналдыру<br>6. Ведущий мәтіні: «Бүгін — ең бақытты күн! Қуанышты бірге бөлісейік!»<br>7. Соңы: Алғыс + ортақ фото. Тойымыз берекелі болсын!"}
+function makeThanksVideo(){var w=wishes.slice(0,3).join(" • ");document.getElementById("thanksOut").innerHTML="<b>🎉 Алғыс видео дайын (демо)!</b><br>Фото: "+document.querySelectorAll("#mediaPreview img").length+" дана<br>Тілектер: "+w+"<br>Мәтін: «Құрметті қонақтар! Келгендеріңізге мың алғыс! Тойымызды ерекше еткендеріңіз үшін рақмет! ❤️»<br>Бұл видеоны статусыңа сал — жаңа клиенттер келеді!";toast("Алғыс видео жасалды!")}
+function spinWheel(){var pr=["🎁 Сыйлық!","💃 Би биле!","🎤 Ән айт!","😂 Әзіл айт!","❤️ Құттықтау!","🎉 Тағы айналдыр!"];var deg=1440+Math.floor(Math.random()*360);document.getElementById("wheel").style.transform="rotate("+deg+"deg)";setTimeout(()=>{var p=pr[Math.floor(Math.random()*pr.length)];document.getElementById("wheelOut").textContent=p;toast(p)},2600)}
 function addWish(){var v=document.getElementById("wallInput").value;if(!v)return;wishes.push(v);localStorage.setItem("wishes",JSON.stringify(wishes));document.getElementById("wallInput").value="";render()}
-function confirmGuest(){var n=document.getElementById("g_name").value||"Қонақ",c=document.getElementById("g_count").value,w=document.getElementById("g_wish").value;guests.push({name:n,count:c,wish:w});localStorage.setItem("guests",JSON.stringify(guests));if(w){wishes.push(n+": "+w);localStorage.setItem("wishes",JSON.stringify(wishes))}document.getElementById("guestOut").textContent="✅ Рақмет, "+n+"! Сіз "+c+" болып келесіз. Тілегіңіз қабылданды!";render()}
-function updateCountdown(){var d=document.getElementById("f_date").value;if(!d)return;var diff=new Date(d)-new Date();var days=Math.max(0,Math.ceil(diff/86400000));document.getElementById("countdown").textContent="Тойға дейін: "+days+" күн қалды! ⏳"}
-function addToCalendar(){var d=document.getElementById("f_date").value||"2026-12-31";var url="https://calendar.google.com/calendar/render?action=TEMPLATE&text="+encodeURIComponent("Тойға шақырту")+"&dates="+d.replace(/-/g,"")+"T120000/"+d.replace(/-/g,"")+"T180000&details="+encodeURIComponent("Қуанышымызға ортақ болыңыз!");window.open(url,"_blank")}
-function openMap(){var p=document.getElementById("f_place").value||"Астана";window.open("https://www.google.com/maps/search/"+encodeURIComponent(p),"_blank")}
-function remindWhatsApp(){window.open("https://wa.me/?text="+encodeURIComponent("Еске салу: Тойымызға шақырамыз! Күні: "+(document.getElementById("f_date").value||"—"))," _blank".trim())}
-function shareInvite(){var last=invites[invites.length-1];if(!last){toast("Алдымен шақырту жаса!");return}window.open("https://wa.me/?text="+encodeURIComponent("🎉 Тойға шақырту! "+last.n1+" ❤️ "+last.n2+" • "+last.toi+" • "+last.date+" • "+location.origin+location.pathname+"?id="+last.id),"_blank")}
-function buy(plan,price){document.getElementById("payOut").textContent="Таңдалды: "+plan+" — "+price+" ₸. Төлемнен кейін толық нұсқа ашылады. (2-кезеңде Kaspi төлем қосамыз)";toast(plan+" таңдалды!")}
-function showCabinet(){go("cabinet");render()}
-function clearAll(){localStorage.clear();invites=[];guests=[];wishes=["Бақытты болыңдар! ❤️"];render();toast("Тазартылды")}
+function confirmGuest(){var n=document.getElementById("g_name").value||"Қонақ",c=document.getElementById("g_count").value,w=document.getElementById("g_wish").value;guests.push({name:n,count:c,wish:w});localStorage.setItem("guests",JSON.stringify(guests));if(w){wishes.push(n+": "+w);localStorage.setItem("wishes",JSON.stringify(wishes))}document.getElementById("guestOut").textContent="✅ Рақмет, "+n+"! "+c+" болып келесіз.";render()}
+function updateCountdown(){var d=document.getElementById("f_date").value;if(!d)return;var days=Math.max(0,Math.ceil((new Date(d)-new Date())/86400000));document.getElementById("countdown").textContent="Тойға дейін: "+days+" күн қалды! ⏳"}
+function addToCalendar(){var d=document.getElementById("f_date").value||"2026-12-31";window.open("https://calendar.google.com/calendar/render?action=TEMPLATE&text="+encodeURIComponent("Тойға шақырту")+"&dates="+d.replace(/-/g,"")+"T120000/"+d.replace(/-/g,"")+"T180000","_blank")}
+function openMap(){window.open("https://www.google.com/maps/search/"+encodeURIComponent(document.getElementById("f_place").value||"Астана"),"_blank")}
+function callTaxi(){window.open("https://yandex.kz/maps/?rtext=~"+encodeURIComponent(document.getElementById("f_place").value||"Астана"),"_blank");toast("Такси: той өтетін жерге бағыт ашылды!")}
+function buy(p,pr){document.getElementById("payOut").textContent="Таңдалды: "+p+" — "+pr+" ₸. 2-кезеңде Kaspi төлем қосылады.";toast(p+" таңдалды!")}
+function clearAll(){localStorage.clear();invites=[];guests=[];wishes=["Бақытты болыңдар! ❤️"];gifts=[];render();toast("Тазартылды")}
 function toggleMusic(){var m=document.getElementById("music");if(m.paused){m.play();document.getElementById("musicBtn").textContent="🎵 Музыка: қосулы"}else{m.pause();document.getElementById("musicBtn").textContent="🎵 Музыка: өшірулі"}}
-// Қонақ сілтеме арқылы кірсе — атын көрсету
 var params=new URLSearchParams(location.search);if(params.get("id")){var f=invites.find(x=>x.id===params.get("id"));if(f){document.getElementById("g_name").value=f.guest;document.getElementById("guestOut").textContent="Сәлем, "+f.guest+"! Сіз "+f.n1+" ❤️ "+f.n2+" тойына шақырылдыңыз!";}}
 render();
 </script></body></html>
