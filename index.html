@@ -1,106 +1,189 @@
 <!DOCTYPE html>
-<html lang="kk">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ержан & Мөлдір - Қоныс той 12.12.2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@600&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+<html lang="kk"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Тойға Ерекше Шақырту — Қуанышыңызды ерекше бөлісіңіз!</title>
 <style>
-:root{--gold:#c5a66b;--gold2:#a78953;--dark:#2b2118}
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#f8f3eb;color:#2b2118;font-family:'Montserrat',sans-serif;text-align:center}
-#envelope{position:fixed;inset:0;z-index:99999;background:radial-gradient(ellipse at 50% 20%,#fff,#fffdf8 30%,#f8f3eb 60%,#eaddc0);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:1.2s;cursor:pointer}
-#envelope.hide{transform:translateY(-115%);opacity:0;pointer-events:none}
-.env-body{width:340px;height:220px;background:linear-gradient(145deg,#e8c87a,#c5a66b,#a58a5d);border-radius:16px;position:relative;box-shadow:0 30px 60px rgba(139,115,53,.3)}
-.seal{position:absolute;top:58%;left:50%;transform:translate(-50%,-50%);width:92px;height:92px;background:#2b2118;border-radius:50%;display:grid;place-items:center;color:#f7e7d0;font-family:'Cormorant Garamond';font-size:32px;border:2px solid #e8c87a;z-index:5}
-.hero{min-height:100vh;display:flex;justify-content:center;padding:24px 16px}
-.card{max-width:700px;width:100%;background:#fffdf8;border:1px solid #e8d9b8;outline:6px double var(--gold);outline-offset:10px;padding:40px 18px;box-shadow:0 20px 80px rgba(139,115,53,.18)}
-.names{font-family:'Great Vibes';font-size:72px;color:var(--gold2);margin:20px 0}
-.small{font-size:10px;letter-spacing:5px;color:var(--gold2)}
-.photoWrap{width:100%;max-width:420px;margin:20px auto;border:6px solid #fff;box-shadow:0 10px 25px #0002;border-radius:12px;overflow:hidden;background:#fff}
-.photoWrap video,.photoWrap img{width:100%;display:block}
-.box{background:#fff;border:1px solid #f0dfbd;border-radius:20px;padding:22px 16px;margin:20px auto;max-width:520px}
-.count{display:flex;justify-content:center;gap:8px;margin-top:16px}
-.count .c{background:#fffdf8;border:1px solid var(--gold);min-width:74px;padding:12px;border-radius:14px}
-.count .c b{display:block;font-size:24px;color:var(--gold2)} .count .c i{font-style:normal;font-size:9px}
-.btn{display:inline-block;padding:15px 26px;border-radius:50px;text-decoration:none;font-size:11px;letter-spacing:2px;font-weight:600;margin:5px;border:none;cursor:pointer}
-.btn-dark{background:var(--dark);color:#fff} .btn-gold{background:linear-gradient(145deg,#e8c87a,#c5a66b);color:#2b2118}
-.btn-light{background:#fff;color:var(--gold2);border:1px solid var(--gold)} .btn-yes{background:#2e7d32;color:#fff} .btn-no{background:#eee;color:#333;border:1px solid #ccc}
-.musicBtn{position:fixed;right:16px;bottom:16px;z-index:9000;width:60px;height:60px;border-radius:50%;background:#fff;border:2px solid var(--gold);display:grid;place-items:center;box-shadow:0 8px 20px rgba(0,0,0,.2);cursor:pointer;font-size:24px;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
-</style>
-</head>
+*{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,sans-serif}
+body{background:#0f0a00;color:#222;overflow-x:hidden}
+a{color:inherit}
+.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.95);display:flex;justify-content:space-between;align-items:center;padding:12px 16px}
+.logo{font-weight:900;font-size:19px}.logo span{color:#d4a017}
+.hero{position:relative;min-height:520px;background:radial-gradient(circle at 50% 20%,#ffd70055,transparent),linear-gradient(180deg,#1a1200,#3a2800);color:#fff;text-align:center;padding:34px 16px;overflow:hidden}
+.oyu{position:absolute;font-size:42px;opacity:.35;animation:float 4s infinite}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-14px) rotate(8deg)}}
+.gold{position:absolute;width:8px;height:8px;background:#ffd700;border-radius:50%;animation:gold 3s infinite}
+@keyframes gold{0%{transform:translateY(0);opacity:1}100%{transform:translateY(260px);opacity:0}}
+.hero h1{font-size:34px;line-height:1.15;margin-top:18px}.hero h1 span{color:#ffd700}
+.hero p{color:#ffe9a8;margin:12px 0 18px}
+.btn{display:block;width:100%;padding:15px;border-radius:16px;border:none;font-weight:800;font-size:16px;cursor:pointer;margin:8px 0}
+.btn-g{background:#ffd700;color:#111}.btn-w{background:#fff;color:#111;border:2px solid #111}.btn-d{background:#111;color:#fff}
+.card{background:#fff;border-radius:20px;padding:16px;margin:14px 16px;box-shadow:0 6px 20px rgba(0,0,0,.08)}
+input,select,textarea{width:100%;padding:13px;border-radius:12px;border:1px solid #ddd;margin:7px 0;font-size:15px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.chip{padding:12px;border-radius:12px;border:1px solid #ffd700;background:#fffdf0;font-weight:700;cursor:pointer;text-align:center}
+.chip.on{background:#ffd700}
+.design{border-radius:16px;padding:14px;color:#fff;cursor:pointer;min-height:110px;display:flex;flex-direction:column;justify-content:flex-end}
+.design b{font-size:16px}.design small{opacity:.9}
+.wheel{width:200px;height:200px;border-radius:50%;margin:12px auto;background:conic-gradient(#ffd700 0 60deg,#ff5a5a 60deg 120deg,#4ecdc4 120deg 180deg,#7c5cff 180deg 240deg,#ff9f43 240deg 300deg,#2ed573 300deg 360deg);display:flex;align-items:center;justify-content:center;transition:transform 2.5s cubic-bezier(.1,.8,.2,1);border:8px solid #fff;box-shadow:0 8px 20px rgba(0,0,0,.2)}
+.wheel span{background:#fff;border-radius:50%;width:64px;height:64px;display:flex;align-items:center;justify-content:center;font-size:28px}
+.env{width:220px;height:150px;background:#c0392b;margin:16px auto;position:relative;border-radius:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#fff;font-size:40px}
+.env.open{background:#e74c3c}
+.gift{width:140px;height:140px;background:#e84393;margin:12px auto;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:60px;cursor:pointer}
+.world{height:200px;perspective:800px;overflow:hidden;background:linear-gradient(180deg,#0b2a4a,#ff9f43);border-radius:18px;display:flex;align-items:center;justify-content:center}
+.world div{width:130px;height:130px;background:linear-gradient(45deg,#ffd700,#ff5a5a);transform:rotateX(55deg) rotateZ(45deg);animation:spin 6s linear infinite;border:3px solid #fff}
+@keyframes spin{to{transform:rotateX(55deg) rotateZ(405deg)}}
+.toast{position:fixed;left:16px;right:16px;bottom:16px;background:#111;color:#fff;padding:14px;border-radius:14px;text-align:center;display:none;z-index:99}
+.hide{display:none}
+.tabs{display:flex;gap:8px;overflow:auto;padding:0 16px}
+.tabs button{white-space:nowrap;padding:10px 14px;border-radius:20px;border:1px solid #ddd;background:#fff;font-weight:700;cursor:pointer}
+.tabs button.on{background:#111;color:#fff}
+.wall{display:flex;flex-wrap:wrap;gap:8px}.wall span{background:#fff3b0;padding:8px 10px;border-radius:12px;font-size:13px;animation:float 3s infinite}
+</style></head>
 <body>
-<div id="envelope" onclick="openInvite()">
-  <div class="env-body"><div class="seal">Е & М</div></div>
-  <div style="margin-top:30px"><div style="font-family:'Great Vibes';font-size:44px;color:var(--gold2)">Ержан & Мөлдір</div><div style="margin-top:16px;border:1px solid var(--gold);padding:12px 32px;border-radius:50px;background:#fff;font-size:11px;letter-spacing:4px">ШАҚЫРУДЫ АШУ ✨</div><div style="margin-top:8px;font-size:9px;letter-spacing:2px;color:#a58a5d">БАСЫП, ӘНДІ ТЫҢДАҢЫЗ 🎵</div></div>
+<div class="top"><div class="logo">🎉 Тойға <span>Ерекше Шақырту</span></div><button onclick="showCabinet()" style="padding:8px 12px;border-radius:10px;border:1px solid #ddd;background:#fff;font-weight:700">👤 Кабинет</button></div>
+
+<!-- 1. БАСТЫ БЕТ -->
+<div class="hero">
+<span class="oyu" style="left:10px;top:20px">☪</span><span class="oyu" style="right:12px;top:60px;animation-delay:.5s">✦</span><span class="oyu" style="left:20px;bottom:80px;animation-delay:1s">❀</span><span class="oyu" style="right:20px;bottom:120px">◆</span>
+<span class="gold" style="left:20%"></span><span class="gold" style="left:50%;animation-delay:.7s"></span><span class="gold" style="left:80%;animation-delay:1.2s"></span>
+<h1>Қуанышыңызды<br><span>ерекше бөлісіңіз!</span></h1>
+<p>Конверт, кино, дауыс, 3D әлем және құпия сыйлық — бәрі бір жерде.</p>
+<button class="btn btn-g" onclick="go('builder')">✨ Шақырту жасау</button>
+<button class="btn" style="background:#fff" onclick="go('designs')">🎨 Ерекше үлгілер</button>
+<button class="btn" style="background:transparent;color:#fff;border:2px solid #ffd700" onclick="go('ready')">📩 Дайын шақыртулар</button>
+<button class="btn" style="background:#333;color:#fff" id="musicBtn" onclick="toggleMusic()">🎵 Музыка: өшірулі</button>
+<audio id="music" loop><source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3"></audio>
+<p id="countdown" style="font-weight:800;margin-top:10px">Тойға дейін: —</p>
 </div>
 
-<audio id="bgAudio" loop preload="auto" playsinline>
-  <source src="music.mp3" type="audio/mpeg">
-  <source src="moldir.mp4" type="video/mp4">
-  <source src="https://cdn.pixabay.com/audio/2022/10/30/audio_8c8a64d6a3.mp3" type="audio/mpeg">
-</audio>
-<button class="musicBtn" id="musicBtn" onclick="toggleMusic()">🎵</button>
+<div class="tabs" id="tabs"></div>
 
-<div class="hero"><div class="card">
-<div class="small">QONYS TOI</div>
-<div class="names">Ержан & Мөлдір</div>
-<h1 style="font-family:'Cormorant Garamond';letter-spacing:5px">ҚОНЫС ТОЙ</h1>
-<div style="width:80px;height:1px;background:var(--gold);margin:20px auto"></div>
-
-<div class="photoWrap">
-  <video autoplay loop muted playsinline poster="erjan.jpg">
-    <source src="moldir.mp4" type="video/mp4">
-  </video>
-  <div style="padding:10px;font-size:11px;letter-spacing:3px;background:#fffdf8">МӨЛДІР - ҚАЗАҚИ НАҚЫШ</div>
+<!-- 2. AI + BUILDER -->
+<div class="card" id="builder">
+<h2>🛠️ Шақырту жасау</h2>
+<p style="color:#666;font-size:13px">Алдымен той түрін таңда — AI бәрін өзі жазып береді.</p>
+<div class="grid2" id="toiTypes"></div>
+<input id="f_name1" placeholder="Той иесі 1: мысалы, Нұрлан">
+<input id="f_name2" placeholder="Той иесі 2: мысалы, Аяулым">
+<input id="f_date" type="date">
+<input id="f_place" placeholder="Орыны: мейрамхана, қала">
+<input id="f_guest" placeholder="Қонақтың аты (жеке сілтеме үшін)">
+<div id="aiOut" style="background:#fffbe6;border-radius:12px;padding:12px;margin:8px 0;font-size:14px;line-height:1.5">AI: Той түрін таңда — мәтін, тілек, дизайн, музыка ұсынамын.</div>
+<button class="btn btn-g" onclick="makeInvite()">✅ Шақыртуды жасау + Жеке сілтеме алу</button>
+<button class="btn btn-w" onclick="copyLink()">🔗 Сілтемені көшіру</button>
+<div id="preview"></div>
 </div>
 
-<div class="photoWrap"><img src="erjan.jpg" onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600'"><div style="padding:10px;font-size:11px;letter-spacing:3px;background:#fffdf8">ЕРЖАН САЙЛАНБЕК</div></div>
-
-<div class="box">
-<div class="small">КҮНІ МЕН УАҚЫТЫ</div>
-<div style="font-family:'Cormorant Garamond';font-size:32px;font-weight:600;margin-top:8px">12 ЖЕЛТОҚСАН 2026 • 12:00</div>
-<div class="count"><div class="c"><b id="d">00</b><i>КҮН</i></div><div class="c"><b id="h">00</b><i>САҒАТ</i></div><div class="c"><b id="m">00</b><i>МИН</i></div><div class="c"><b id="s">00</b><i>СЕК</i></div></div>
+<!-- 3+13. КОНВЕРТ / КИНО / ДАУЫС / 3D / СЫЙЛЫҚ -->
+<div class="card">
+<h2>💌 Сиқырлы конверт + 🎬 Кино шақырту</h2>
+<label><input type="checkbox" id="ft_env" checked> Конверт қосулы</label><br>
+<label><input type="checkbox" id="ft_cinema" checked> Кино шақырту қосулы</label><br>
+<label><input type="checkbox" id="ft_voice" checked> Дауыс қосулы</label><br>
+<label><input type="checkbox" id="ft_3d" checked> 3D әлем қосулы</label><br>
+<label><input type="checkbox" id="ft_gift" checked> Құпия сыйлық қосулы</label>
+<div id="envBox"><div class="env" id="envelope" onclick="openEnvelope()">💌<br><small style="font-size:12px">Басыңыз</small></div><p style="text-align:center;font-size:13px;color:#666">Конвертті бас — ішінен шақырту шығады</p></div>
+<div id="cinemaBox"><div style="height:180px;border-radius:16px;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;padding:14px" id="cinema">🎬 Кино шақырту<br>Фотоңды жүкте, трейлер басталады</div><input type="file" accept="image/*" onchange="loadPhoto(event,'cinema')"><button class="btn btn-d" onclick="playCinema()">▶ Трейлерді ойнату</button></div>
+<div id="voiceBox"><h3>🎤 Дауысты шақырту</h3><p style="font-size:13px;color:#666">«Құрметті ағайын-туыс, сіздерді қуанышымыздың қадірлі қонағы болуға шақырамыз!»</p><button class="btn btn-g" onclick="recordVoice()">● Жазу</button><button class="btn btn-w" onclick="playVoice()">▶ Тыңдау</button><button class="btn btn-w" onclick="deleteVoice()">🗑 Өшіру</button><audio id="voicePlayer" controls class="hide" style="width:100%"></audio><p id="voiceStatus" style="font-size:13px"></p></div>
+<div id="worldBox"><h3>🌍 3D Виртуалды әлем</h3><div class="world"><div></div></div><p style="font-size:13px;color:#666;text-align:center">Айналатын қазақы 3D әлем — телефонда да жылдам</p></div>
+<div id="giftBox"><h3>🎁 Құпия сыйлық</h3><input id="giftText" placeholder="Қонаққа құпия хабарлама жаз: мысалы, Сізге арнайы сый бар!"><div class="gift" onclick="openGift()">🎁</div><p id="giftOut" style="text-align:center"></p></div>
 </div>
 
-<div class="box">
-<div class="small">МЕКЕН-ЖАЙ</div>
-<div style="font-size:20px;font-weight:600;margin-top:8px">Сембинова 10/4, Астана</div>
-<a class="btn btn-gold" href="https://www.google.com/maps/search/?api=1&query=Сембинова+10/4+Астана" target="_blank">📍 GOOGLE MAPS</a>
-<a class="btn btn-light" href="https://2gis.kz/astana/search/Сембинова%2010%2F4" target="_blank">2GIS</a>
-</div>
+<!-- 4. ВИДЕО -->
+<div class="card"><h2>🎥 Видео шақырту</h2><p style="font-size:13px;color:#666">Фото / видео жүкте, музыка таңда, бөліс.</p>
+<input type="file" accept="image/*,video/*" multiple onchange="loadMedia(event)">
+<div id="mediaPreview" style="display:flex;gap:8px;flex-wrap:wrap;margin:8px 0"></div>
+<select id="musicSelect"><option>🎵 Той әуені 1</option><option>🎵 Той әуені 2</option><option>🎵 Той әуені 3</option></select>
+<button class="btn btn-g" onclick="shareInvite()">📤 Дайын шақыртуды бөлісу (WhatsApp)</button></div>
 
-<div class="box">
-<div class="small">РАСТАУ</div>
-<a class="btn btn-yes" href="https://wa.me/77082418836?text=✅ Келемін 12.12.2026" target="_blank">✅ ИӘ, КЕЛЕМІН</a>
-<a class="btn btn-no" href="https://wa.me/77082418836?text=❌ Келе алмаймын" target="_blank">❌ КЕЛЕ АЛМАЙМЫН</a><br>
-<a class="btn btn-dark" href="https://wa.me/77082418836?text=Тілегім:" target="_blank">💌 ТІЛЕК ЖАЗУ</a>
-</div>
+<!-- 5. ҚОНАҚ -->
+<div class="card" id="guest"><h2>👥 Қонаққа арналған жүйе</h2>
+<input id="g_name" placeholder="Сіздің есіміңіз">
+<select id="g_count"><option>1 адам</option><option>2 адам</option><option>3 адам</option><option>4 адам</option></select>
+<textarea id="g_wish" placeholder="Той иесіне тілегіңізді жазыңыз..."></textarea>
+<button class="btn btn-g" onclick="confirmGuest()">✅ Қатысатынымды растаймын</button>
+<p id="guestOut" style="font-size:14px;margin-top:8px"></p>
+<p style="font-size:13px;color:#666">Растаған қонақтар: <b id="guestCount">0</b> • Барлық адам: <b id="peopleCount">0</b></p></div>
 
-<div class="box">
-<button class="btn btn-gold" onclick="navigator.share?navigator.share({title:'Қоныс той',url:location.href}):copyLink()">🔗 БӨЛІСУ</button>
-<button class="btn btn-light" onclick="copyLink()">📋 КӨШІРУ</button>
-</div>
+<!-- 6. ИНТЕРАКТИВ -->
+<div class="card"><h2>🎡 Бақытты дөңгелек</h2><div class="wheel" id="wheel"><span>🎁</span></div><button class="btn btn-g" onclick="spinWheel()">🎡 Айналдыру</button><p id="wheelOut" style="text-align:center;font-weight:700"></p></div>
+<div class="card"><h2>💬 Тілек қабырғасы</h2><div class="wall" id="wall"></div><input id="wallInput" placeholder="Тілегіңді жаз..."><button class="btn btn-w" onclick="addWish()">➕ Тілек қалдыру</button></div>
+<div class="card"><h2>📸 Той фотоальбомы + Ортақ желі</h2><input type="file" accept="image/*" onchange="loadMedia(event)"><p style="font-size:13px;color:#666">Қонақтардың фотолары осында жиналады.</p></div>
 
-<div style="font-size:9px;letter-spacing:4px;color:#a58a5d;margin-top:20px">ЕРЖАН & МӨЛДІР • 12.12.2026 • +7 708 241 88 36</div>
-</div></div>
+<!-- 7. ТОЙ КҮНІ -->
+<div class="card"><h2>📅 Той күніндегі жүйе</h2>
+<button class="btn btn-w" onclick="addToCalendar()">📅 Күнтізбеге қосу</button>
+<button class="btn btn-w" onclick="openMap()">🗺 Картаны ашу</button>
+<button class="btn btn-g" onclick="remindWhatsApp()">💬 WhatsApp-пен еске салу</button>
+<p style="font-size:13px;color:#666">Той күні: <span id="dateLabel">таңдалмады</span></p></div>
 
+<!-- 8. ДИЗАЙНДАР -->
+<div class="card" id="designs"><h2>🎨 20+ Ерекше дизайн</h2><div class="grid2" id="designList"></div></div>
+<div class="card" id="ready"><h2>📩 Дайын шақыртулар</h2><p style="font-size:14px">Жоғарыда жасаған шақыртуың осында сақталады. Кабинеттен көре аласың.</p><div id="savedList"></div></div>
+
+<!-- 9. ТАРИФ -->
+<div class="card"><h2>💰 Тарифтер — Алдымен тегін көр, ұнаса төле</h2>
+<div class="grid2">
+<div style="border:2px solid #cd7f32;border-radius:16px;padding:14px"><b>🥉 ҚОЛА</b><h3>3000 ₸</h3><p style="font-size:13px">1 дизайн • 20 қонақ</p><button class="btn btn-w" onclick="buy('ҚОЛА',3000)">Таңдау</button></div>
+<div style="border:2px solid #c0c0c0;border-radius:16px;padding:14px"><b>🥈 КҮМІС</b><h3>5000 ₸</h3><p style="font-size:13px">Барлық дизайн • Видео • Дауыс</p><button class="btn btn-w" onclick="buy('КҮМІС',5000)">Таңдау</button></div>
+</div><div style="border:2px solid #ffd700;border-radius:16px;padding:14px;margin-top:10px;background:#fffbe6"><b>🥇 АЛТЫН</b><h3>10000 ₸</h3><p style="font-size:13px">Барлығы + Кино + 3D + Құпия сыйлық + Шексіз қонақ</p><button class="btn btn-g" onclick="buy('АЛТЫН',10000)">Таңдау</button></div>
+<p id="payOut" style="font-size:13px;color:#666;margin-top:8px">Төлем: Kaspi / карта арқылы — әзірге демо, келесі кезеңде нақты төлем қосамыз.</p></div>
+
+<!-- 10. КАБИНЕТ -->
+<div class="card" id="cabinet"><h2>👤 Жеке кабинет</h2><p style="font-size:13px;color:#666">Шақыртуларың, қонақтарың, төлем тарихың — бәрі осында сақталады.</p><div id="cabinetOut"></div><button class="btn btn-w" onclick="clearAll()">🗑 Барлығын өшіру</button></div>
+
+<div style="text-align:center;padding:20px;color:#fff;font-size:13px;background:#111">© 2026 Тойға Ерекше Шақырту • Қазақстан • WhatsApp • Қауіпсіздік: дерек тек сіздің телефоныңызда сақталады</div>
+<div class="toast" id="toast"></div>
 <script>
-let playing=false;
-function openInvite(){
-  document.getElementById('envelope').classList.add('hide');
-  let a=document.getElementById('bgAudio');a.volume=0.8;
-  a.play().then(()=>{playing=true;document.getElementById('musicBtn').textContent='🎵';}).catch(()=>{document.getElementById('musicBtn').textContent='🔇';});
+var TOIS=["Үйлену тойы","Қыз ұзату","Сүндет той","Бесік той","Тұсаукесер","Мерейтой","Туған күн","Беташар","Құдалық","Неке"];
+var DESIGNS=[["Алтын Lux","#d4a017"],["Royal Wedding","#4b0082"],["Қазақы ою","#8b4513"],["Ақ Көгершін","#6aa9ff"],["Изумруд","#00755e"],["Бордо","#7b1e2b"],["Luxury Black","#111"],["Көк Аспан","#00aaff"],["Романтикалық гүлдер","#e84393"],["Заманауи минимализм","#888"],["Алтын-Қызғылт","#ff8fab"],["Хан Сарайы","#b8860b"],["Ақ Жібек","#aaa"],["Көктем","#2ed573"],["Түнгі Жұлдыз","#1e1e5e"],["Шаңырақ","#c0392b"],["Арай","#ff9f43"],["Нұр","#ffd700"],["Сакура","#ffb6c1"],["Корольдік Қызыл","#c0392b"]];
+var selToi="",selDesign="Алтын Lux",invites=JSON.parse(localStorage.getItem("invites")||"[]"),guests=JSON.parse(localStorage.getItem("guests")||"[]"),wishes=JSON.parse(localStorage.getItem("wishes")||["Бақытты болыңдар! ❤️","Қуаныштарың көп болсын!"]),mediaRecorder=null,voiceBlob=null;
+function toast(t){var e=document.getElementById("toast");e.textContent=t;e.style.display="block";setTimeout(()=>e.style.display="none",2500)}
+function go(id){document.getElementById(id).scrollIntoView({behavior:"smooth"})}
+function render(){
+var t=document.getElementById("toiTypes");t.innerHTML="";TOIS.forEach(x=>{var b=document.createElement("div");b.className="chip"+(selToi===x?" on":"");b.textContent=x;b.onclick=()=>{selToi=x;render();aiSuggest()};t.appendChild(b)});
+var d=document.getElementById("designList");d.innerHTML="";DESIGNS.forEach(x=>{var el=document.createElement("div");el.className="design";el.style.background=x[1];el.innerHTML="<b>"+x[0]+"</b><small>Таңдау үшін бас</small>";el.onclick=()=>{selDesign=x[0];toast("Дизайн таңдалды: "+x[0])};d.appendChild(el)});
+var w=document.getElementById("wall");w.innerHTML="";wishes.forEach(x=>{var s=document.createElement("span");s.textContent=x;w.appendChild(s)});
+document.getElementById("guestCount").textContent=guests.length;document.getElementById("peopleCount").textContent=guests.reduce((a,g)=>a+(parseInt(g.count)||1),0);
+var sl=document.getElementById("savedList");sl.innerHTML=invites.length?invites.map((x,i)=>"<p>• "+x.n1+" ❤️ "+x.n2+" — "+x.toi+" • "+x.design+"</p>").join(""):"<p style='color:#888'>Әлі шақырту жоқ. Жоғарыдан жаса.</p>";
+var c=document.getElementById("cabinetOut");c.innerHTML="<p>Шақыртулар: <b>"+invites.length+"</b> • Қонақтар: <b>"+guests.length+"</b> • Таңдалған дизайн: <b>"+selDesign+"</b></p>"+(invites.length?invites.map(x=>"<p>🔗 "+location.origin+location.pathname+"?id="+x.id+"</p>").join(""):"");
+var tabs=["Шақырту жасау","Дизайндар","Дайын шақыртулар","Кабинет"];document.getElementById("tabs").innerHTML="";tabs.forEach(x=>{var b=document.createElement("button");b.textContent=x;b.onclick=()=>go(x==="Шақырту жасау"?"builder":x==="Дизайндар"?"designs":x==="Дайын шақыртулар"?"ready":"cabinet");document.getElementById("tabs").appendChild(b)});
+updateCountdown();
 }
-function toggleMusic(){
-  let a=document.getElementById('bgAudio');
-  if(playing){a.pause();document.getElementById('musicBtn').textContent='🔇';}else{a.play();document.getElementById('musicBtn').textContent='🎵';}
-  playing=!playing;
+function aiSuggest(){
+var texts={"Үйлену тойы":"Құрметті ағайын-туыс! Екі жас шаңырақ көтеріп, өмірдің жаңа парағын ашқалы отыр.","Қыз ұзату":"Аяулы қызымызды ақ жолмен ұзатып, жаңа өмірге шығарып саламыз.","Сүндет той":"Балапанымыздың азамат болуға алғашқы қадамы — сүндет тойына шақырамыз!","Бесік той":"Бөбегіміздің бесік тойы — қуанышымызды бөлісіңіздер!"};
+document.getElementById("aiOut").innerHTML="<b>🤖 AI ұсынысы — "+selToi+"</b><br>✍️ Мәтін: "+(texts[selToi]||"Қуанышымызға ортақ болуға шақырамыз!")+"<br>💌 Тілек: Бақытты, берекелі, ғұмырлы болыңдар!<br>🎨 Дизайн: "+selDesign+" • Алтын Lux ұсынылады<br>🎵 Музыка: Той әуені 1 • Қазақша нақыштағы мәтін дайын";
 }
-const t=new Date("2026-12-12T12:00:00+05:00").getTime();
-setInterval(()=>{let d=t-Date.now();if(d<=0)return;document.getElementById('d').textContent=Math.floor(d/86400000);document.getElementById('h').textContent=String(Math.floor(d%86400000/3600000)).padStart(2,'0');document.getElementById('m').textContent=String(Math.floor(d%3600000/60000)).padStart(2,'0');document.getElementById('s').textContent=String(Math.floor(d%60000/1000)).padStart(2,'0');},1000);
-function copyLink(){navigator.clipboard.writeText(location.href).then(()=>alert('✅ Көшірілді: '+location.href));}
-</script>
-</body>
-</html>
+function makeInvite(){
+var n1=document.getElementById("f_name1").value||"Нұрлан",n2=document.getElementById("f_name2").value||"Аяулым",d=document.getElementById("f_date").value||"2026-12-31",p=document.getElementById("f_place").value||"Астана",g=document.getElementById("f_guest").value||"Құрметті қонақ";
+if(!selToi){toast("Алдымен той түрін таңда!");return}
+var id="TOI"+Date.now().toString().slice(-6);var inv={id:id,toi:selToi,n1:n1,n2:n2,date:d,place:p,guest:g,design:selDesign};
+invites.push(inv);localStorage.setItem("invites",JSON.stringify(invites));
+document.getElementById("dateLabel").textContent=d;updateCountdown();
+document.getElementById("preview").innerHTML="<div style='background:linear-gradient(135deg,#fff7cc,#ffd700);border-radius:16px;padding:18px;text-align:center;margin-top:12px'><h3>🎉 "+n1+" ❤️ "+n2+"</h3><p>"+selToi+" • "+selDesign+"</p><p>📅 "+d+"<br>📍 "+p+"<br>👤 "+g+"</p><p>Қуанышымызға ортақ болыңыздар!</p><p style='font-size:12px'>Жеке сілтеме: ?id="+id+"</p></div>";
+toast("Шақырту жасалды! ID: "+id);render();
+}
+function copyLink(){var last=invites[invites.length-1];if(!last){toast("Алдымен шақырту жаса!");return}var link=location.origin+location.pathname+"?id="+last.id;navigator.clipboard.writeText(link).then(()=>toast("Сілтеме көшірілді!")); }
+function openEnvelope(){if(!document.getElementById("ft_env").checked){toast("Конверт өшірулі — баптаудан қос");return}var e=document.getElementById("envelope");e.classList.add("open");e.innerHTML="✉️ Ашылды!";setTimeout(()=>{e.innerHTML="🎉 Шақырту шықты!";toast("Конверт ашылды! Шақырту дайын!")},600)}
+function loadPhoto(ev,id){var f=ev.target.files[0];if(!f)return;var r=new FileReader();r.onload=e=>{document.getElementById(id).innerHTML="<img src='"+e.target.result+"' style='width:100%;height:100%;object-fit:cover;border-radius:16px'>"};r.readAsDataURL(f)}
+function loadMedia(ev){var box=document.getElementById("mediaPreview");[...ev.target.files].forEach(f=>{var r=new FileReader();r.onload=e=>{var im=document.createElement("img");im.src=e.target.result;im.style="width:80px;height:80px;object-fit:cover;border-radius:12px";box.appendChild(im)};r.readAsDataURL(f)});toast("Фото жүктелді!")}
+function playCinema(){if(!document.getElementById("ft_cinema").checked){toast("Кино шақырту өшірулі");return}var c=document.getElementById("cinema");var msgs=["🎬 Трейлер басталады...","❤️ Екі жас...","🎉 Тойымызға шақырамыз!"];var i=0;var iv=setInterval(()=>{c.innerHTML=msgs[i];i++;if(i>=msgs.length){clearInterval(iv);toast("Кино шақырту дайын!")}},1000)}
+async function recordVoice(){try{var s=await navigator.mediaDevices.getUserMedia({audio:true});mediaRecorder=new MediaRecorder(s);var chunks=[];mediaRecorder.ondataavailable=e=>chunks.push(e.data);mediaRecorder.onstop=()=>{voiceBlob=new Blob(chunks,{type:"audio/webm"});var url=URL.createObjectURL(voiceBlob);var p=document.getElementById("voicePlayer");p.src=url;p.classList.remove("hide");document.getElementById("voiceStatus").textContent="✅ Дауыс жазылды! Тыңдап көр."};mediaRecorder.start();document.getElementById("voiceStatus").textContent="● Жазылуда... Сөйлеңіз!";setTimeout(()=>mediaRecorder.stop(),8000);toast("8 секунд жазылады...")}catch(e){document.getElementById("voiceStatus").textContent="Микрофонға рұқсат беріңіз."}}
+function playVoice(){if(!voiceBlob){toast("Алдымен дауыс жаз!");return}document.getElementById("voicePlayer").play()}
+function deleteVoice(){voiceBlob=null;document.getElementById("voicePlayer").classList.add("hide");document.getElementById("voiceStatus").textContent="Дауыс өшірілді."}
+function openGift(){if(!document.getElementById("ft_gift").checked){toast("Құпия сыйлық өшірулі");return}var t=document.getElementById("giftText").value||"Сізге арнайы сый бар! Тойда кездескенше!";document.getElementById("giftOut").innerHTML="🎉 "+t;toast("Сыйлық ашылды!")}
+function spinWheel(){var prizes=["🎁 Сыйлық!","💃 Би биле!","🎤 Ән айт!","😂 Әзіл айт!","❤️ Құттықтау!","🎉 Тағы айналдыр!"];var deg=1440+Math.floor(Math.random()*360);document.getElementById("wheel").style.transform="rotate("+deg+"deg)";setTimeout(()=>{var p=prizes[Math.floor(Math.random()*prizes.length)];document.getElementById("wheelOut").textContent=p;toast(p)},2600)}
+function addWish(){var v=document.getElementById("wallInput").value;if(!v)return;wishes.push(v);localStorage.setItem("wishes",JSON.stringify(wishes));document.getElementById("wallInput").value="";render()}
+function confirmGuest(){var n=document.getElementById("g_name").value||"Қонақ",c=document.getElementById("g_count").value,w=document.getElementById("g_wish").value;guests.push({name:n,count:c,wish:w});localStorage.setItem("guests",JSON.stringify(guests));if(w){wishes.push(n+": "+w);localStorage.setItem("wishes",JSON.stringify(wishes))}document.getElementById("guestOut").textContent="✅ Рақмет, "+n+"! Сіз "+c+" болып келесіз. Тілегіңіз қабылданды!";render()}
+function updateCountdown(){var d=document.getElementById("f_date").value;if(!d)return;var diff=new Date(d)-new Date();var days=Math.max(0,Math.ceil(diff/86400000));document.getElementById("countdown").textContent="Тойға дейін: "+days+" күн қалды! ⏳"}
+function addToCalendar(){var d=document.getElementById("f_date").value||"2026-12-31";var url="https://calendar.google.com/calendar/render?action=TEMPLATE&text="+encodeURIComponent("Тойға шақырту")+"&dates="+d.replace(/-/g,"")+"T120000/"+d.replace(/-/g,"")+"T180000&details="+encodeURIComponent("Қуанышымызға ортақ болыңыз!");window.open(url,"_blank")}
+function openMap(){var p=document.getElementById("f_place").value||"Астана";window.open("https://www.google.com/maps/search/"+encodeURIComponent(p),"_blank")}
+function remindWhatsApp(){window.open("https://wa.me/?text="+encodeURIComponent("Еске салу: Тойымызға шақырамыз! Күні: "+(document.getElementById("f_date").value||"—"))," _blank".trim())}
+function shareInvite(){var last=invites[invites.length-1];if(!last){toast("Алдымен шақырту жаса!");return}window.open("https://wa.me/?text="+encodeURIComponent("🎉 Тойға шақырту! "+last.n1+" ❤️ "+last.n2+" • "+last.toi+" • "+last.date+" • "+location.origin+location.pathname+"?id="+last.id),"_blank")}
+function buy(plan,price){document.getElementById("payOut").textContent="Таңдалды: "+plan+" — "+price+" ₸. Төлемнен кейін толық нұсқа ашылады. (2-кезеңде Kaspi төлем қосамыз)";toast(plan+" таңдалды!")}
+function showCabinet(){go("cabinet");render()}
+function clearAll(){localStorage.clear();invites=[];guests=[];wishes=["Бақытты болыңдар! ❤️"];render();toast("Тазартылды")}
+function toggleMusic(){var m=document.getElementById("music");if(m.paused){m.play();document.getElementById("musicBtn").textContent="🎵 Музыка: қосулы"}else{m.pause();document.getElementById("musicBtn").textContent="🎵 Музыка: өшірулі"}}
+// Қонақ сілтеме арқылы кірсе — атын көрсету
+var params=new URLSearchParams(location.search);if(params.get("id")){var f=invites.find(x=>x.id===params.get("id"));if(f){document.getElementById("g_name").value=f.guest;document.getElementById("guestOut").textContent="Сәлем, "+f.guest+"! Сіз "+f.n1+" ❤️ "+f.n2+" тойына шақырылдыңыз!";}}
+render();
+</script></body></html>
